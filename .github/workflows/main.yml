@@ -20,7 +20,7 @@ jobs:
       - run: npm run test
 
       - name: Deploy to netlify
-        run: curl -X POST -d {} ${{secrets.NETLIFY_HOOK}}
+        run: curl -X POST -d {} https://api.netlify.com/build_hooks/627ffc84f8e00e23d23ae946
         env:
           NETLIFY_SITE_ID: ${{secrets.NETLIFY_SITE_ID}}
           NETLIFY_AUTH_TOKEN: ${{secrets.NETLIFY_AUTH_TOKEN}}
